@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Lambda application that calls the Lambda API.
+Resources:
+  function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: main
+      Runtime: go1.x
+      CodeUri: s3://lambda-artifacts-074a9b849eb6a041/ddff0c450674f62db1b9c88a71028a8c
+      Description: Call the AWS Lambda API
+      Timeout: 5
+      Policies:
+      - AWSLambdaBasicExecutionRole
+      - AWSLambda_ReadOnlyAccess
+      - AWSXrayWriteOnlyAccess
+      - AmazonDynamoDBFullAccess
+      Tracing: Active

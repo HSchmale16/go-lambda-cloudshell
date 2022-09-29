@@ -7,7 +7,7 @@ Resources:
     Properties:
       Handler: main
       Runtime: go1.x
-      CodeUri: function/.
+      CodeUri: ./function
       Description: Call the AWS Lambda API
       Timeout: 5
       # Function's execution role
